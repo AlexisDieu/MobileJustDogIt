@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.helha.mobilejustdogit.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_pension"
+        android:name="com.helha.mobilejustdogit.PensionFragment"
+        android:label="Pension"
+        tools:layout="@layout/fragment_pension"
+        />
+
+    <fragment
+        android:id="@+id/nav_adoption"
+        android:name="com.helha.mobilejustdogit.AdoptionFragment"
+        android:label="Adoption"
+        tools:layout="@layout/fragment_adoption"
+        />
+    <fragment
+        android:id="@+id/nav_login"
+        android:name="com.helha.mobilejustdogit.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login"
+        />
+    <fragment
+        android:id="@+id/nav_notlogged"
+        android:name="com.helha.mobilejustdogit.NotLoggedFragment"
+        android:label="Not Logged"
+        tools:layout="@layout/fragment_not_logged"/>
+    <fragment
+        android:id="@+id/nav_actuality"
+        android:name="com.helha.mobilejustdogit.ActualityFragment"
+        android:label="Actuality"
+        tools:layout="@layout/fragment_actuality"
+        />
+
+</navigation>
