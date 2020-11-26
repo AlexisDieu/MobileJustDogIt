@@ -20,7 +20,7 @@
             android:layout_height="119dp"
             android:rotationX="25"
             android:rotationY="1"
-            android:text="Se connecter"
+            android:text="Se connecter "
             android:textAlignment="center"
             android:textAllCaps="true"
             android:textColor="@android:color/holo_red_dark"
