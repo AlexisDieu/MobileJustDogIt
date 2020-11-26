@@ -5,12 +5,12 @@
     android:fitsSystemWindows="true">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="56dp"
-
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         android:paddingLeft="24dp"
+
+        android:paddingTop="56dp"
         android:paddingRight="24dp">
 
         <TextView
@@ -19,8 +19,8 @@
             android:layout_width="354dp"
             android:layout_height="119dp"
             android:rotationX="25"
-            android:rotationY="2"
-            android:text="Log in"
+            android:rotationY="1"
+            android:text="Se connecter"
             android:textAlignment="center"
             android:textAllCaps="true"
             android:textColor="@android:color/holo_red_dark"
@@ -32,11 +32,13 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/Login_email"
+
+            <EditText
+                android:id="@+id/Login_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-                android:hint="Email" />
+                android:hint="Email"
+                android:inputType="textEmailAddress" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Password Label -->
@@ -69,11 +71,11 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
             android:gravity="center"
-            android:text="Pas de compte, crées-en un"
+            android:text="Pas de compte, crées-en un !"
             android:textSize="16dip" />
 
 
-
-    </LinearLayout>/>
+    </LinearLayout>
+    />
 
 </FrameLayout>
