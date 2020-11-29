@@ -9,9 +9,9 @@
         android:id="@+id/tv_adoption_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30sp"
-        android:text="Menu Adoption"
-        android:textSize="50sp"/>
+        android:text="Nos animaux à adopter !"
+        android:textAlignment="center"
+        android:textSize="50sp" />
 
 
 </FrameLayout>
