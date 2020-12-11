@@ -58,4 +58,5 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         transaction.addToBackStack(null);
         transaction.commit();
     }
+
 }
