@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".AddNewProduct">
+
+
+    <EditText
+        android:id="@+id/Type_Animal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="90dp"
+        android:layout_marginRight="45dp"
+        android:hint="Type d'animal"
+        android:inputType="textMultiLine"
+        android:padding="20dp" />
+
+    <EditText
+        android:id="@+id/Description_animal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="45dp"
+        android:layout_below="@id/Type_Animal"
+        android:hint="Description de l'animal"
+        android:inputType="textMultiLine"
+        android:padding="20dp"/>
+    <EditText
+        android:id="@+id/Nom_animal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="45dp"
+        android:layout_below="@id/Description_animal"
+        android:hint="Nom de l'animal"
+        android:inputType="textMultiLine"
+        android:padding="20dp"/>
+    <EditText
+        android:id="@+id/Couleur_animal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="45dp"
+        android:layout_below="@id/Nom_animal"
+        android:hint="Couleur de l'animal"
+        android:inputType="textMultiLine"
+        android:padding="20dp"/>
+    <EditText
+        android:id="@+id/Race_animal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="45dp"
+        android:layout_below="@id/Couleur_animal"
+        android:hint="Race de l'animal"
+        android:inputType="textMultiLine"
+        android:padding="20dp"/>
+    <EditText
+        android:id="@+id/DateNaiss"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="45dp"
+        android:layout_below="@id/Race_animal"
+        android:hint="Date de naissance de l'animal"
+        android:inputType="textMultiLine"
+        android:padding="20dp"/>
+
+    <Button
+        android:id="@+id/buttonSave"
+        android:layout_width="162dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="220dp"
+        android:layout_marginTop="610dp"
+        android:text="Ajouter" />
+
+    <Button
+        android:id="@+id/btn_annuler"
+        android:layout_width="162dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="610dp"
+
+        android:text="Annuler" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:background="#BF0C0C"
+        android:gravity="center"
+        android:text="Création d'un nouvel animal"
+        android:textAllCaps="true"
+        android:textStyle="bold" />
+
+</RelativeLayout>
