@@ -6,28 +6,42 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/home_icon"
             android:title="@string/menu_home" />
         <item
             android:id="@+id/nav_adoption"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/adoption_icon"
             android:title="Adoption" />
         <item
             android:id="@+id/nav_pension"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/pension_icon"
             android:title="Pension" />
+    </group>
+    <item android:title="Profile">
+        <menu>
+            <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_login"
             android:title="Login"
+            android:icon="@drawable/login_icon"
             />
         <item
             android:id="@+id/nav_inscription"
             android:title="Inscription"
+            android:icon="@drawable/valid_foreground"
             />
-        <item
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="Autres">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
             android:id="@+id/nav_actuality"
             android:title="Actualité"
             />
-
-    </group>
+            </group>
+        </menu>
+    </item>
 </menu>

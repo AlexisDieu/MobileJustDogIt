@@ -2,28 +2,19 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".AdoptionFragment">
+    android:layout_height="match_parent">
 
-
-    <TextView
-        android:id="@+id/tv_adoption_title"
+    <ListView
         android:layout_width="match_parent"
-        android:layout_height="164dp"
-        android:text="Nos animaux à adopter !"
-        android:textAlignment="center"
-        android:textSize="50sp" />
+        android:layout_height="454dp"
+        android:layout_marginTop="150dp" />
 
     <Button
-        android:layout_width="146dp"
-        android:layout_height="100dp"
-        android:layout_marginLeft="280dp"
-        android:layout_marginTop="630dp"
-        android:text="Ajouter" />
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="->"
+        android:layout_marginTop="610dp"
+        android:layout_marginLeft="200dp"/>
 
-    <Button
-        android:layout_width="136dp"
-        android:layout_height="92dp"
-        android:layout_marginTop="630dp"
-        android:text="Supprimer" />
 </FrameLayout>
