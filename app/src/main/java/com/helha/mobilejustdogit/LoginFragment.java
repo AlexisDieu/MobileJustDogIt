@@ -61,10 +61,10 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onChanged(Utilisateur utilisateur) {
                 if(utilisateur !=null) {
-                    Toast.makeText(LoginFragment.this.getContext(), "Connection valid", Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginFragment.this.getContext(), "Connexion réussie", Toast.LENGTH_LONG).show();
                 }
                 else{
-                    Toast.makeText(LoginFragment.this.getContext(),"Invalid user",Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginFragment.this.getContext(),"utilisateur invalide",Toast.LENGTH_LONG).show();
                 }
 
             }

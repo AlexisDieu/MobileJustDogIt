@@ -64,7 +64,7 @@ public class InscriptionFragment extends Fragment implements View.OnClickListene
         phone2 = rootView.findViewById(R.id.et_phonenumber2);
         street = rootView.findViewById(R.id.et_street);
         cp = rootView.findViewById(R.id.et_cp);
-        houseNumber = rootView.findViewById(R.id.et_houseNumber);
+        houseNumber = rootView.findViewById(R.id.et_number);
         box = rootView.findViewById(R.id.et_box);
         city = rootView.findViewById(R.id.et_city);
 
@@ -76,7 +76,7 @@ public class InscriptionFragment extends Fragment implements View.OnClickListene
         if (nickname.getText().toString().equals("") || email.getText().toString().equals("") || password.getText().toString().equals("")
                 || phone1.getText().toString().equals("") || street.getText().toString().equals("") || cp.getText().toString().equals("")
                 || houseNumber.getText().toString().equals("") || city.getText().toString().equals("")) {
-            Toast.makeText(InscriptionFragment.this.getContext(), "You did not enter all necessary informations", Toast.LENGTH_SHORT).show();
+            Toast.makeText(InscriptionFragment.this.getContext(), "Vous n'avez pas entrez toutes les informations requises", Toast.LENGTH_SHORT).show();
 
         }
         else {
@@ -89,9 +89,9 @@ public class InscriptionFragment extends Fragment implements View.OnClickListene
                         @Override
                         public void onChanged(Utilisateur utilisateur) {
                             if (utilisateur != null) {
-                                Toast.makeText(InscriptionFragment.this.getContext(), "Add in bd", Toast.LENGTH_LONG).show();
+                                Toast.makeText(InscriptionFragment.this.getContext(), "Ajouter à la Base de donnée", Toast.LENGTH_LONG).show();
                             } else {
-                                Toast.makeText(InscriptionFragment.this.getContext(), "There is empty slot", Toast.LENGTH_LONG).show();
+                                Toast.makeText(InscriptionFragment.this.getContext(), "Il y a un champ vide", Toast.LENGTH_LONG).show();
                             }
 
                         }
