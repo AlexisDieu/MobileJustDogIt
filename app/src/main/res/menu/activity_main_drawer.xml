@@ -21,8 +21,13 @@
             android:title="Login"
             />
         <item
+            android:id="@+id/nav_inscription"
+            android:title="Inscription"
+            />
+        <item
             android:id="@+id/nav_actuality"
             android:title="Actualité"
             />
+
     </group>
 </menu>

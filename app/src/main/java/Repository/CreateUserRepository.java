@@ -12,17 +12,17 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class AuthentificateRepository {
+public class CreateUserRepository {
 
-    public AccountService getAccountId(){
+    public AccountService createUser(){
         return ApiClient.GetRetrofit().create(AccountService.class);
     }
 
-    public LiveData<Utilisateur> checkUtil(String email,String password){
+    public LiveData<Utilisateur> creaUtilisateurLiveData(Utilisateur utilisateur){
 
         final MutableLiveData<Utilisateur> utilisateurMutableLiveData = new MutableLiveData<>();
 
-        getAccountId().GetIdByAuthentification(email,password).enqueue(new Callback<Utilisateur>() {
+        createUser().Create(utilisateur).enqueue(new Callback<Utilisateur>() {
             @Override
             public void onResponse(Call<Utilisateur> call, Response<Utilisateur> response) {
                 utilisateurMutableLiveData.postValue(response.body());
@@ -37,4 +37,5 @@ public class AuthentificateRepository {
 
         return utilisateurMutableLiveData;
     }
+
 }

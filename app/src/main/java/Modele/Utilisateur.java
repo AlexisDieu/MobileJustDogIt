@@ -10,8 +10,8 @@ public class Utilisateur {
     public String tel ;
     public String tel2 ;
 
-    public Utilisateur(int id, String pseudo, String email, String mdp, Habitat habitat, String tel, String tel2) {
-        this.id = id;
+    public Utilisateur( String pseudo, String email, String mdp, Habitat habitat, String tel, String tel2) {
+
         this.pseudo = pseudo;
         this.email = email;
         this.mdp = mdp;

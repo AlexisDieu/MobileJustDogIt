@@ -9,8 +9,8 @@ public class Habitat {
     public String boite ;
     public String ville ;
 
-    public Habitat(int id, String rue, int cp, String numero, String boite, String ville) {
-        this.id = id;
+    public Habitat(String rue, int cp, String numero, String boite, String ville) {
+
         this.rue = rue;
         this.cp = cp;
         this.numero = numero;
