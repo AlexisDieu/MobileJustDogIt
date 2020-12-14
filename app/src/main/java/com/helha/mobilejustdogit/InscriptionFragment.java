@@ -73,23 +73,30 @@ public class InscriptionFragment extends Fragment implements View.OnClickListene
 
     @Override
     public void onClick(View v) {
-        habitat = new Habitat(street.getText().toString(), Integer.parseInt(cp.getText().toString()), houseNumber.getText().toString(), box.getText().toString(), city.getText().toString());
+        if (nickname.getText().toString().equals("") || email.getText().toString().equals("") || password.getText().toString().equals("")
+                || phone1.getText().toString().equals("") || street.getText().toString().equals("") || cp.getText().toString().equals("")
+                || houseNumber.getText().toString().equals("") || city.getText().toString().equals("")) {
+            Toast.makeText(InscriptionFragment.this.getContext(), "You did not enter all necessary informations", Toast.LENGTH_SHORT).show();
 
-        Utilisateur util = new Utilisateur(nickname.getText().toString(), email.getText().toString(), password.getText().toString(),
-                habitat, phone1.getText().toString(), phone2.getText().toString());
+        }
+        else {
+            habitat = new Habitat(street.getText().toString(), Integer.parseInt(cp.getText().toString()), houseNumber.getText().toString(), box.getText().toString(), city.getText().toString());
 
-        createUserRepository.creaUtilisateurLiveData(util)
-                .observe(getViewLifecycleOwner(), new Observer<Utilisateur>() {
-                    @Override
-                    public void onChanged(Utilisateur utilisateur) {
-                        if (utilisateur != null) {
-                            Toast.makeText(InscriptionFragment.this.getContext(), "Add in bd", Toast.LENGTH_LONG).show();
-                        } else {
-                            Toast.makeText(InscriptionFragment.this.getContext(), "There is empty slot", Toast.LENGTH_LONG).show();
+            Utilisateur util = new Utilisateur(nickname.getText().toString(), email.getText().toString(), password.getText().toString(),
+                    habitat, phone1.getText().toString(), phone2.getText().toString());
+            createUserRepository.creaUtilisateurLiveData(util)
+                    .observe(getViewLifecycleOwner(), new Observer<Utilisateur>() {
+                        @Override
+                        public void onChanged(Utilisateur utilisateur) {
+                            if (utilisateur != null) {
+                                Toast.makeText(InscriptionFragment.this.getContext(), "Add in bd", Toast.LENGTH_LONG).show();
+                            } else {
+                                Toast.makeText(InscriptionFragment.this.getContext(), "There is empty slot", Toast.LENGTH_LONG).show();
+                            }
+
                         }
 
-                    }
-
-                });
+                    });
+        }
     }
 }
