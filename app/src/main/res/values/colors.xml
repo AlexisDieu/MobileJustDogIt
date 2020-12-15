@@ -8,4 +8,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="lightwhite">#EBEFF5</color>
     <color name="purple">#800080</color>
+
+    <color name="colorBackground">#f9f9fa</color>
+    <color name="colorTextSubtitle">#4e4e4e</color>
+    <color name="colorTextTitle">#262626</color>
 </resources>
