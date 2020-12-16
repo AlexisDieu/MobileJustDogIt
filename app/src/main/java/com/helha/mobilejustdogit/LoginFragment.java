@@ -97,6 +97,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                     Toast.makeText(LoginFragment.this.getContext(), "Connexion réussie", Toast.LENGTH_LONG).show();
                     /*menu = new NavigationActivity().getMenu();
                     menu.findItem(R.id.nav_logout).setVisible(true);
+                    menu.findItem(R.id.nav_login).setVisible(false);
                     menu.findItem(R.id.nav_profile).setVisible(true);*/
                 }
                 else{
