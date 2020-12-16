@@ -22,6 +22,8 @@ public class NavigationActivity extends AppCompatActivity {
 
 
     private AppBarConfiguration mAppBarConfiguration;
+    Menu menu;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +50,9 @@ public class NavigationActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+        menu = navigationView.getMenu();
+        menu.findItem(R.id.nav_logout).setVisible(false);
+        menu.findItem(R.id.nav_profile).setVisible(false);
     }
 
     @Override
@@ -65,4 +70,7 @@ public class NavigationActivity extends AppCompatActivity {
     }
 
 
+    public Menu getMenu() {
+        return menu;
+    }
 }

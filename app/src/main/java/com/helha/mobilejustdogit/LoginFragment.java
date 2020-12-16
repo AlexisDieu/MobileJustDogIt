@@ -9,6 +9,7 @@ import androidx.lifecycle.Observer;
 
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -16,6 +17,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.navigation.NavigationView;
 import com.helha.mobilejustdogit.ui.home.HomeFragment;
 
 import java.util.ArrayList;
@@ -33,6 +35,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
     final AuthentificateRepository authentificateRepository = new AuthentificateRepository();
     EditText email;
+    Menu menu;
     EditText password;
     public LoginFragment() {
         // Constructeur vide
@@ -41,6 +44,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
     @Override
@@ -56,6 +60,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
          email = rootView.findViewById(R.id.Login_email);
          password = rootView.findViewById(R.id.MotDePasse);
+
 
         btn.setOnClickListener(this);
 
@@ -90,7 +95,9 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
             public void onChanged(Utilisateur utilisateur) {
                 if(utilisateur !=null) {
                     Toast.makeText(LoginFragment.this.getContext(), "Connexion réussie", Toast.LENGTH_LONG).show();
-                    //Redirection Logout Profile
+                    /*menu = new NavigationActivity().getMenu();
+                    menu.findItem(R.id.nav_logout).setVisible(true);
+                    menu.findItem(R.id.nav_profile).setVisible(true);*/
                 }
                 else{
                     Toast.makeText(LoginFragment.this.getContext(),"utilisateur invalide",Toast.LENGTH_LONG).show();
