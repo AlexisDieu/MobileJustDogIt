@@ -2,15 +2,17 @@ package Modele;
 
 public class Utilisateur {
 
-    public int id;
-    public String pseudo ;
-    public String email ;
-    public String mdp ;
-    public Habitat habitat ;
-    public String tel ;
-    public String tel2 ;
+    private int id;
+    private String pseudo ;
+    private String email ;
+    private String mdp ;
+    private Habitat habitat ;
+    private String tel ;
+    private String tel2 ;
+    private String token;
+    private String Role;
 
-    public Utilisateur( String pseudo, String email, String mdp, Habitat habitat, String tel, String tel2) {
+    public Utilisateur(String pseudo, String email, String mdp, Habitat habitat, String tel, String tel2) {
 
         this.pseudo = pseudo;
         this.email = email;
@@ -18,6 +20,7 @@ public class Utilisateur {
         this.habitat = habitat;
         this.tel = tel;
         this.tel2 = tel2;
+
     }
 
     public int getId() {
@@ -76,6 +79,21 @@ public class Utilisateur {
         this.tel2 = tel2;
     }
 
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public String getRole() {
+        return Role;
+    }
+
+    public void setRole(String role) {
+        Role = role;
+    }
 
     @Override
     public String toString() {
@@ -87,6 +105,8 @@ public class Utilisateur {
                 ", habitat=" + habitat +
                 ", tel='" + tel + '\'' +
                 ", tel2='" + tel2 + '\'' +
+                ", token='" + token + '\'' +
+                ", Role='" + Role + '\'' +
                 '}';
     }
 }

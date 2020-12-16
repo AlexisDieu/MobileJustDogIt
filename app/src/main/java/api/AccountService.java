@@ -2,6 +2,7 @@ package api;
 
 import java.util.List;
 
+import Modele.Authentificator;
 import Modele.Utilisateur;
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -14,8 +15,8 @@ public interface AccountService {
     @GET("api/util")
     Call<List<Utilisateur>> Query();
 
-    @GET("api/util/authentification/{email}/{password}")
-    Call<Utilisateur> GetIdByAuthentification(@Path("email") String email,@Path("password") String password);
+    @POST("api/util/authentification")
+    Call<Utilisateur> GetIdByAuthentification(@Body Authentificator authentificator);
 
     @POST("api/util")
     Call<Utilisateur> Create(@Body Utilisateur utilisateur);
