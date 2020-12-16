@@ -1,5 +1,6 @@
 package com.helha.mobilejustdogit;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.helha.mobilejustdogit.ui.home.HomeFragment;
@@ -48,10 +50,34 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         View rootView = inflater.inflate(R.layout.fragment_login, container, false);
 
         Button btn = (Button) rootView.findViewById(R.id.btn_login);
+        TextView MdpOublie = rootView.findViewById(R.id.MdpOublie) ;
+        TextView creationCompte = rootView.findViewById(R.id.txt_creationCompte) ;
+
+
          email = rootView.findViewById(R.id.Login_email);
          password = rootView.findViewById(R.id.MotDePasse);
 
         btn.setOnClickListener(this);
+
+        MdpOublie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                Intent i = new Intent(v.getContext(),mdpoublie.class);
+                getActivity().startActivity(i);
+            }
+        });
+        creationCompte.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                Fragment fragment2= new InscriptionFragment();
+
+                getFragmentManager().beginTransaction().
+                        replace(R.id.txt_creationCompte, fragment2).
+                        addToBackStack("frags").commit();
+            }
+        });
 
         return rootView;
     }
@@ -64,6 +90,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
             public void onChanged(Utilisateur utilisateur) {
                 if(utilisateur !=null) {
                     Toast.makeText(LoginFragment.this.getContext(), "Connexion réussie", Toast.LENGTH_LONG).show();
+                    //Redirection Logout Profile
                 }
                 else{
                     Toast.makeText(LoginFragment.this.getContext(),"utilisateur invalide",Toast.LENGTH_LONG).show();

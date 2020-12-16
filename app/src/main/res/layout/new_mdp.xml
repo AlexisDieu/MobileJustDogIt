@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <?xml version="1.0" encoding="utf-8"?>
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -16,6 +12,7 @@
             android:orientation="vertical">
 
             <ImageView
+                android:id="@+id/back_mdpNewcoord"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/back_icon"
@@ -53,7 +50,7 @@
                 android:gravity="center"
                 android:layout_gravity="center"/>
 
-            <com.google.android.material.textfield.TextInputLayout
+            <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
@@ -69,14 +66,10 @@
                 app:endIconTint="@color/black"
                 android:textColorHint="@color/black">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/black"/>
 
 
-            </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
+            </EditText>
+            <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -91,15 +84,12 @@
                 app:endIconTint="@color/black"
                 android:textColorHint="@color/black">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/black"/>
 
 
-            </com.google.android.material.textfield.TextInputLayout>
+            </EditText>
 
             <Button
+                android:id="@+id/btn_mdp_confirm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Valider"
@@ -114,4 +104,3 @@
         </LinearLayout>
 
     </ScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
