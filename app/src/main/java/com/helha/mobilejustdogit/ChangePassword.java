@@ -33,6 +33,7 @@ public class ChangePassword  extends AppCompatActivity {
             {
                 Intent i = new Intent(v.getContext(), mdpoublie.class);
                 startActivity(i);
+                ChangePassword.this.finish();
             }
         });
     }

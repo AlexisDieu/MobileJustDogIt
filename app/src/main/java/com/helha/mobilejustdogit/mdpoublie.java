@@ -39,8 +39,7 @@ public class mdpoublie extends AppCompatActivity implements View.OnClickListener
             @Override
             public void onClick(View v)
             {
-                Intent i = new Intent(v.getContext(), LoginFragment.class);
-                startActivity(i);
+                mdpoublie.this.finish();
             }
         });
     }
