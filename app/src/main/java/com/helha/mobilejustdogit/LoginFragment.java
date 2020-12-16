@@ -19,6 +19,7 @@ import com.helha.mobilejustdogit.ui.home.HomeFragment;
 import java.util.ArrayList;
 import java.util.List;
 
+import Modele.Authentificator;
 import Modele.Utilisateur;
 import Repository.AccountRepository;
 import Repository.AuthentificateRepository;
@@ -57,7 +58,8 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        authentificateRepository.checkUtil(email.getText().toString(),password.getText().toString()).observe(getViewLifecycleOwner(), new Observer<Utilisateur>() {
+        Authentificator authentificator= new Authentificator(email.getText().toString(),password.getText().toString());
+        authentificateRepository.checkUtil(authentificator).observe(getViewLifecycleOwner(), new Observer<Utilisateur>() {
             @Override
             public void onChanged(Utilisateur utilisateur) {
                 if(utilisateur !=null) {

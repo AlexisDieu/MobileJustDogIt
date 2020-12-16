@@ -5,6 +5,7 @@ import android.util.Log;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
+import Modele.Authentificator;
 import Modele.Utilisateur;
 import api.AccountService;
 import api.ApiClient;
@@ -18,11 +19,11 @@ public class AuthentificateRepository {
         return ApiClient.GetRetrofit().create(AccountService.class);
     }
 
-    public LiveData<Utilisateur> checkUtil(String email,String password){
+    public LiveData<Utilisateur> checkUtil(Authentificator authentificator){
 
         final MutableLiveData<Utilisateur> utilisateurMutableLiveData = new MutableLiveData<>();
 
-        getAccountId().GetIdByAuthentification(email,password).enqueue(new Callback<Utilisateur>() {
+        getAccountId().GetIdByAuthentification(authentificator).enqueue(new Callback<Utilisateur>() {
             @Override
             public void onResponse(Call<Utilisateur> call, Response<Utilisateur> response) {
                 utilisateurMutableLiveData.postValue(response.body());

@@ -2,12 +2,12 @@ package Modele;
 
 public class Habitat {
 
-    public int id ;
-    public String rue;
-    public int cp;
-    public String numero ;
-    public String boite ;
-    public String ville ;
+    private int id ;
+    private String rue;
+    private int cp;
+    private String numero ;
+    private String boite ;
+    private String ville ;
 
     public Habitat(String rue, int cp, String numero, String boite, String ville) {
 
