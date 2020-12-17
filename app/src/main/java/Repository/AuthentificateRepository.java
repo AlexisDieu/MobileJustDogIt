@@ -1,9 +1,12 @@
 package Repository;
 
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+
+import com.helha.mobilejustdogit.LoginFragment;
 
 import Modele.Authentificator;
 import Modele.Utilisateur;
@@ -26,14 +29,21 @@ public class AuthentificateRepository {
         getAccountId().GetIdByAuthentification(authentificator).enqueue(new Callback<Utilisateur>() {
             @Override
             public void onResponse(Call<Utilisateur> call, Response<Utilisateur> response) {
-                utilisateurMutableLiveData.postValue(response.body());
-                Log.i("CallAPIid", "onResponse: "+response.body().getToken());
 
+                if (response.isSuccessful()) {
+                    utilisateurMutableLiveData.postValue(response.body());
+                    Log.i("CallAPIid", "onResponse: " + response.body());
+
+                }
+                else{
+                    utilisateurMutableLiveData.postValue(null);
+                }
             }
 
             @Override
             public void onFailure(Call<Utilisateur> call, Throwable t) {
                 Log.i("CallAPIid", "onFailure: "+t.getMessage());
+
             }
         });
 

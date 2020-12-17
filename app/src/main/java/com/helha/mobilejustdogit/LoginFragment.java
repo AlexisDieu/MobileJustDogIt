@@ -100,11 +100,6 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                 if(utilisateur !=null) {
                     Toast.makeText(LoginFragment.this.getContext(), "Connexion réussie", Toast.LENGTH_LONG).show();
                     getActivity().onBackPressed();
-                    /*menu = new NavigationActivity().getMenu();
-                    menu.findItem(R.id.nav_logout).setVisible(true);
-                    menu.findItem(R.id.nav_login).setVisible(false);
-                    menu.findItem(R.id.nav_profile).setVisible(true);*/
-
 
                     SharedPreferences loginuser = getContext().getSharedPreferences("user", Context.MODE_PRIVATE);
                     SharedPreferences.Editor userEditor = loginuser.edit();
@@ -125,20 +120,6 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
             }
 
         });
-/*       Fragment fragment = null;
-        switch (v.getId()) {
-            case R.id.btn_login:
-                fragment = new HomeFragment();
-                replaceFragment(fragment);
-                break;
-        }*/
-    }
 
-/*    private void replaceFragment(Fragment fragment) {
-        FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        transaction.replace(R.id.nav_host_fragment, fragment);
-        transaction.addToBackStack(null);
-        transaction.commit();
     }
-*/
 }

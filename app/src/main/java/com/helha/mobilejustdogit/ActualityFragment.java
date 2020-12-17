@@ -54,8 +54,7 @@ public class ActualityFragment extends Fragment {
 
         SharedPreferences loginUser = view.getContext().getSharedPreferences("user", Context.MODE_PRIVATE);
 
-        String loginToken = loginUser.getString("loginKey","oui");
-        Log.i("CallAPIactuality", loginToken);
+        String loginToken = loginUser.getString("loginKey","");
         final int idUser = loginUser.getInt("idKey",0);
 
         listViewActuality = view.findViewById(R.id.lv_actuality);

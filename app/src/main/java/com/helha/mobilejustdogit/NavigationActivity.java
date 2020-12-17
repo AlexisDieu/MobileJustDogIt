@@ -82,8 +82,7 @@ public class NavigationActivity extends AppCompatActivity {
             public void onDrawerStateChanged(int newState) {
                 SharedPreferences loginUser = getSharedPreferences("user", Context.MODE_PRIVATE);
 
-                String loginToken = loginUser.getString("loginKey","oui");
-                Log.i("CallAPIactuality", loginToken);
+                String loginToken = loginUser.getString("loginKey","");
                 final int idUser = loginUser.getInt("idKey",0);
 
                 if(idUser == 0 || loginToken ==null){
