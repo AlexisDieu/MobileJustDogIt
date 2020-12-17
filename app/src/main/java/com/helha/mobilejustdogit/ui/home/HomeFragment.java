@@ -13,6 +13,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.NavigationUI;
 
 import com.helha.mobilejustdogit.AdoptionFragment;
 import com.helha.mobilejustdogit.PensionFragment;
@@ -50,6 +53,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             case R.id.btn_home_goAdoption :
                 fragment = new AdoptionFragment();
                 replaceFragment(fragment);
+                /*NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+                NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
+                NavigationUI.setupWithNavController(navigationView, navController);*/
+
                 break;
             case R.id.btn_home_goPension :
                 fragment = new PensionFragment();
@@ -61,7 +68,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     private void replaceFragment(Fragment fragment) {
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         transaction.replace(R.id.nav_host_fragment, fragment);
-        transaction.addToBackStack(null);
         transaction.commit();
     }
 }
