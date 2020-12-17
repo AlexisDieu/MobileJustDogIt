@@ -110,7 +110,7 @@
             android:layout_height="@dimen/activity_vertical_margin" />
 
         <Button
-            android:onClick="handleUpdateProfile"
+            android:onClick="MettreAJourProfile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimary"
@@ -126,7 +126,7 @@
             android:layout_height="wrap_content">
             <com.google.android.material.textfield.TextInputEditText
                 android:hint="AncienMotDePasse"
-                android:id="@+id/text_password_old"
+                android:id="@+id/AncienMotDePasse"
                 android:imeOptions="actionNext"
                 android:inputType="textPassword"
                 android:layout_width="match_parent"
@@ -138,7 +138,7 @@
             android:layout_height="wrap_content">
             <com.google.android.material.textfield.TextInputEditText
                 android:hint="NouveauMotDePasse"
-                android:id="@+id/text_password_new"
+                android:id="@+id/Nouveau_MotDePasse"
                 android:imeOptions="actionNext"
                 android:inputType="textPassword"
                 android:layout_width="match_parent"
@@ -150,7 +150,7 @@
             android:layout_height="wrap_content">
             <com.google.android.material.textfield.TextInputEditText
                 android:hint="Confirmation du mot de passe"
-                android:id="@+id/text_password_confirm"
+                android:id="@+id/ConfirmerMotDePasse"
                 android:imeOptions="actionDone"
                 android:inputType="textPassword"
                 android:layout_width="match_parent"
@@ -162,7 +162,7 @@
             android:layout_height="@dimen/activity_vertical_margin" />
 
         <Button
-            android:onClick="handleChangePassword"
+            android:onClick="ChangerMotDePasse"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/black"
