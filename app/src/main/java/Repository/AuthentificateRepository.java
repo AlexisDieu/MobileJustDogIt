@@ -27,12 +27,13 @@ public class AuthentificateRepository {
             @Override
             public void onResponse(Call<Utilisateur> call, Response<Utilisateur> response) {
                 utilisateurMutableLiveData.postValue(response.body());
-                Log.i("CallAPIid", "onResponse: "+response.body());
+                Log.i("CallAPIid", "onResponse: "+response.body().getToken());
+
             }
 
             @Override
             public void onFailure(Call<Utilisateur> call, Throwable t) {
-                Log.i("CallAPIid", "onResponse: "+t.getMessage());
+                Log.i("CallAPIid", "onFailure: "+t.getMessage());
             }
         });
 

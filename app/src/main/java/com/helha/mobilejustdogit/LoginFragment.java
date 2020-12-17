@@ -1,8 +1,12 @@
 package com.helha.mobilejustdogit;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
@@ -99,6 +103,19 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                     menu.findItem(R.id.nav_logout).setVisible(true);
                     menu.findItem(R.id.nav_login).setVisible(false);
                     menu.findItem(R.id.nav_profile).setVisible(true);*/
+
+
+                    SharedPreferences loginuser = getContext().getSharedPreferences("user", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor userEditor = loginuser.edit();
+                    userEditor.putString("loginKey", utilisateur.getJWTBearer());
+                    userEditor.putInt("idKey", utilisateur.getId());
+                    userEditor.apply();
+                    //When deconnected == do an editor.clear to reset the user
+                    /*SharedPreferences loginusers = getContext().getSharedPreferences("user", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor userEditors = loginusers.edit();
+                    userEditors.clear();
+                    userEditor.apply();*/
+
                 }
                 else{
                     Toast.makeText(LoginFragment.this.getContext(),"utilisateur invalide",Toast.LENGTH_LONG).show();

@@ -82,6 +82,9 @@ public class Utilisateur {
     public String getToken() {
         return token;
     }
+    public String getJWTBearer(){
+        return "Bearer "+getToken();
+    }
 
     public void setToken(String token) {
         this.token = token;

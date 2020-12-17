@@ -1,6 +1,9 @@
 package com.helha.mobilejustdogit;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
@@ -9,6 +12,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -39,6 +43,10 @@ public class NavigationActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+
+
+
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
@@ -51,8 +59,48 @@ public class NavigationActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
         menu = navigationView.getMenu();
-        menu.findItem(R.id.nav_logout).setVisible(false);
-        menu.findItem(R.id.nav_profile).setVisible(false);
+
+        drawer.addDrawerListener(new DrawerLayout.DrawerListener() {
+
+            @Override
+            public void onDrawerSlide(@NonNull View drawerView, float slideOffset) {
+
+            }
+
+            @Override
+            public void onDrawerOpened(@NonNull View drawerView) {
+
+            }
+
+            @Override
+            public void onDrawerClosed(@NonNull View drawerView) {
+
+            }
+            @Override
+            public void onDrawerStateChanged(int newState) {
+                SharedPreferences loginUser = getSharedPreferences("user", Context.MODE_PRIVATE);
+
+                String loginToken = loginUser.getString("loginKey","oui");
+                Log.i("CallAPIactuality", loginToken);
+                final int idUser = loginUser.getInt("idKey",0);
+
+                if(idUser == 0 || loginToken ==null){
+                    menu.findItem(R.id.nav_actuality).setEnabled(false);
+                    menu.findItem(R.id.nav_pension).setEnabled(false);
+                    menu.findItem(R.id.nav_logout).setVisible(false);
+                    menu.findItem(R.id.nav_profile).setVisible(false);
+                }
+                else {
+                    menu.findItem(R.id.nav_actuality).setEnabled(true);
+                    menu.findItem(R.id.nav_pension).setEnabled(true);
+                    menu.findItem(R.id.nav_logout).setVisible(true);
+                    menu.findItem(R.id.nav_profile).setVisible(true);
+                    menu.findItem(R.id.nav_login).setVisible(false);
+                    menu.findItem(R.id.nav_inscription).setVisible(false);
+                }
+            }
+        });
+
     }
 
     @Override
