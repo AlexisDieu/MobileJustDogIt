@@ -47,7 +47,6 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
         Button btn = (Button) rootView.findViewById(R.id.btn_login);
         TextView MdpOublie = rootView.findViewById(R.id.MdpOublie);
-        TextView creationCompte = rootView.findViewById(R.id.txt_creationCompte);
 
 
         email = rootView.findViewById(R.id.Login_email);
@@ -61,15 +60,6 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), mdpoublie.class);
                 getActivity().startActivity(i);
-            }
-        });
-        creationCompte.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Fragment fragment2 = new InscriptionFragment();
-                getFragmentManager().beginTransaction().
-                        replace(R.id.txt_creationCompte, fragment2).
-                        addToBackStack("frags").commit();
             }
         });
 
