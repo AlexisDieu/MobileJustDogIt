@@ -3,7 +3,6 @@ package Modele;
 public class Actuality {
 
 
-
     private int id;
     private Pension pension;
     private String dateActu;

@@ -18,14 +18,50 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_info_actuality"
-        android:layout_width="278dp"
-        android:layout_height="71dp"
-        android:layout_marginTop="24dp"
-        android:text="Actualité"
-        android:gravity="center"
+        android:id="@+id/NomAnimal"
+        android:layout_width="126dp"
+        android:layout_height="18dp"
+        android:layout_marginBottom="32dp"
+        android:text="Nom de l'animal"
+        app:layout_constraintBottom_toBottomOf="@+id/shadow_bottom"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/shadow_bottom" />
+
+    <TextView
+        android:id="@+id/Nom"
+        android:layout_width="126dp"
+        android:layout_height="18dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/shadow_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/shadow_bottom"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/shadow_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/bottom_shadow"
+        android:text="Date de l'actualité"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_info_actuality"
+        android:layout_width="383dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="104dp"
+
+        android:text="Actualité"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_date_actuality" />
 </androidx.constraintlayout.widget.ConstraintLayout>

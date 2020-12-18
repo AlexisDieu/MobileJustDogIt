@@ -1,5 +1,7 @@
 package Modele;
 
+import com.helha.mobilejustdogit.R;
+
 public class Pension {
 
     private int id;
@@ -8,9 +10,11 @@ public class Pension {
     private String dateEntree;
     private String dateSortie;
     private int prix;
+    private int images;
 
     public Pension(int id, Utilisateur utilisateur, Animal animal, String dateEntree, String dateSortie, int prix) {
         this.id = id;
+        this.images= R.mipmap.ic_launcher_foreground;
         this.utilisateur = utilisateur;
         this.animal = animal;
         this.dateEntree = dateEntree;
@@ -72,9 +76,15 @@ public class Pension {
                 "id=" + id +
                 ", utilisateur=" + utilisateur +
                 ", animal=" + animal +
+                ", image:" + images+
                 ", dateEntree='" + dateEntree + '\'' +
                 ", dateSortie='" + dateSortie + '\'' +
                 ", prix=" + prix +
                 '}';
+    }
+
+    public int getImages()
+    {
+        return images=R.mipmap.ic_launcher_foreground;
     }
 }

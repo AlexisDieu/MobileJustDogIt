@@ -80,7 +80,6 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onClick(View v) {
                 Fragment fragment2 = new InscriptionFragment();
-
                 getFragmentManager().beginTransaction().
                         replace(R.id.txt_creationCompte, fragment2).
                         addToBackStack("frags").commit();

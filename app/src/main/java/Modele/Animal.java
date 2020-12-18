@@ -96,6 +96,7 @@ public class Animal {
                 ", dateNaissance=" + dateNaissance +
                 ", race='" + race + '\'' +
                 ", couleur='" + couleur + '\'' +
+                ", photo=" + photo +'\''+
                 ", nom='" + nom + '\'' +
                 ", reserve=" + reserve +
                 '}';

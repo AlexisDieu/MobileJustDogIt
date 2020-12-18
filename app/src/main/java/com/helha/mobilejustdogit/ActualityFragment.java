@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.google.android.material.navigation.NavigationView;
@@ -33,7 +34,10 @@ public class ActualityFragment extends Fragment {
 
     List<Actuality> actualityList;
 
-    ListView listViewActuality;
+    private int images =R.mipmap.ic_launcher_foreground;
+
+
+            ListView listViewActuality;
 
 
     public ActualityFragment() {
@@ -70,6 +74,7 @@ public class ActualityFragment extends Fragment {
                     public void onChanged(List<Actuality> actualities) {
                         for (Actuality a : actualities) {
                             if (a.getPension().getUtilisateur().getId() == idUser)
+
                                 actualityList.add(a);
                         }
                         actualityAdapter.notifyDataSetChanged();

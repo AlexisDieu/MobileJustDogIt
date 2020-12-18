@@ -2,10 +2,12 @@ package Adapter;
 
 import android.content.Context;
 import android.os.Build;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -18,6 +20,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 import Modele.Actuality;
+import Modele.Pension;
 
 
 public class ActualityAdapter extends ArrayAdapter<Actuality> {
@@ -49,9 +52,25 @@ public class ActualityAdapter extends ArrayAdapter<Actuality> {
         TextView dateActuality = actualityView.findViewById(R.id.tv_date_actuality);
         TextView description = actualityView.findViewById(R.id.tv_info_actuality);
 
+        ImageView e = actualityView.findViewById(R.id.shadow_bottom);
+        TextView nomAnimal = actualityView.findViewById(R.id.Nom);
+        String f =  actuality.getPension().getAnimal().getTypeAnimal();
+        nomAnimal.setText(actuality.getPension().getAnimal().getNom());
+
+            if(f.equals("Chat"))
+            {
+                e.setImageResource(R.mipmap.cat_image_foreground);
+            }
+            else
+            {
+                e.setImageResource(R.mipmap.ic_launcher_foreground);
+                Log.d("myTag", actuality.getPension().getAnimal().getTypeAnimal());
+            }
+
 
         dateActuality.setText(FormatDate(actuality.getDateActu()));
         description.setText(actuality.getDescriptif());
+
 
 
     }
