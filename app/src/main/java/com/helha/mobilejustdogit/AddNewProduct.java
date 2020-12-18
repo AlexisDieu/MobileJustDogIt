@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.Locale;
 
 
-public class AddNewProduct  extends AppCompatActivity {
+public class AddNewProduct extends AppCompatActivity {
 
 
     private String Nom_categorie;
@@ -27,13 +27,11 @@ public class AddNewProduct  extends AppCompatActivity {
 
         AJouterAnimal = (Button) findViewById(R.id.buttonSave);
         Annuler = (Button) findViewById(R.id.btn_annuler);
-        Description_animal = (EditText)findViewById(R.id.Description_animal);
-        couleur_animal = (EditText)findViewById(R.id.Couleur_animal);
-        race_animal = (EditText)findViewById(R.id.Race_animal);
-        nom_animal = (EditText)findViewById(R.id.Nom_animal);
-        datenaiss_animal = (EditText)findViewById(R.id.DateNaiss);
-
-
+        Description_animal = (EditText) findViewById(R.id.Description_animal);
+        couleur_animal = (EditText) findViewById(R.id.Couleur_animal);
+        race_animal = (EditText) findViewById(R.id.Race_animal);
+        nom_animal = (EditText) findViewById(R.id.Nom_animal);
+        datenaiss_animal = (EditText) findViewById(R.id.DateNaiss);
 
     }
 

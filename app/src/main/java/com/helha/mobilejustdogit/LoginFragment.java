@@ -41,6 +41,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
     EditText email;
     Menu menu;
     EditText password;
+
     public LoginFragment() {
         // Constructeur vide
     }
@@ -58,29 +59,27 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         View rootView = inflater.inflate(R.layout.fragment_login, container, false);
 
         Button btn = (Button) rootView.findViewById(R.id.btn_login);
-        TextView MdpOublie = rootView.findViewById(R.id.MdpOublie) ;
-        TextView creationCompte = rootView.findViewById(R.id.txt_creationCompte) ;
+        TextView MdpOublie = rootView.findViewById(R.id.MdpOublie);
+        TextView creationCompte = rootView.findViewById(R.id.txt_creationCompte);
 
 
-         email = rootView.findViewById(R.id.Login_email);
-         password = rootView.findViewById(R.id.MotDePasse);
+        email = rootView.findViewById(R.id.Login_email);
+        password = rootView.findViewById(R.id.MotDePasse);
 
 
         btn.setOnClickListener(this);
 
         MdpOublie.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
-                Intent i = new Intent(v.getContext(),mdpoublie.class);
+            public void onClick(View v) {
+                Intent i = new Intent(v.getContext(), mdpoublie.class);
                 getActivity().startActivity(i);
             }
         });
         creationCompte.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
-                Fragment fragment2= new InscriptionFragment();
+            public void onClick(View v) {
+                Fragment fragment2 = new InscriptionFragment();
 
                 getFragmentManager().beginTransaction().
                         replace(R.id.txt_creationCompte, fragment2).
@@ -93,11 +92,11 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        Authentificator authentificator= new Authentificator(email.getText().toString(),password.getText().toString());
+        Authentificator authentificator = new Authentificator(email.getText().toString(), password.getText().toString());
         authentificateRepository.checkUtil(authentificator).observe(getViewLifecycleOwner(), new Observer<Utilisateur>() {
             @Override
             public void onChanged(Utilisateur utilisateur) {
-                if(utilisateur !=null) {
+                if (utilisateur != null) {
                     Toast.makeText(LoginFragment.this.getContext(), "Connexion réussie", Toast.LENGTH_LONG).show();
                     getActivity().onBackPressed();
 
@@ -110,9 +109,8 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                     userEditor.apply();
 
 
-                }
-                else{
-                    Toast.makeText(LoginFragment.this.getContext(),"utilisateur invalide",Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(LoginFragment.this.getContext(), "utilisateur invalide", Toast.LENGTH_LONG).show();
                 }
 
             }

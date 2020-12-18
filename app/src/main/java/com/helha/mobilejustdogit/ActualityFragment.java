@@ -40,7 +40,6 @@ public class ActualityFragment extends Fragment {
         // Required empty public constructor
     }
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,13 +53,13 @@ public class ActualityFragment extends Fragment {
 
         SharedPreferences loginUser = view.getContext().getSharedPreferences("user", Context.MODE_PRIVATE);
 
-        String loginToken = loginUser.getString("loginKey","");
-        final int idUser = loginUser.getInt("idKey",0);
+        String loginToken = loginUser.getString("loginKey", "");
+        final int idUser = loginUser.getInt("idKey", 0);
 
         listViewActuality = view.findViewById(R.id.lv_actuality);
         actualityList = new ArrayList<>();
 
-        final ActualityAdapter actualityAdapter = new ActualityAdapter(getContext(),R.id.lv_actuality,actualityList);
+        final ActualityAdapter actualityAdapter = new ActualityAdapter(getContext(), R.id.lv_actuality, actualityList);
 
         listViewActuality.setAdapter(actualityAdapter);
 
@@ -69,12 +68,12 @@ public class ActualityFragment extends Fragment {
 
                     @Override
                     public void onChanged(List<Actuality> actualities) {
-                        for (Actuality a:actualities) {
-                            if(a.getPension().getUtilisateur().getId()== idUser)
+                        for (Actuality a : actualities) {
+                            if (a.getPension().getUtilisateur().getId() == idUser)
                                 actualityList.add(a);
                         }
                         actualityAdapter.notifyDataSetChanged();
-                        Log.i("CallAPIactualityFrag", "onChanged: "+actualities.toString());
+                        Log.i("CallAPIactualityFrag", "onChanged: " + actualities.toString());
 
                     }
                 });

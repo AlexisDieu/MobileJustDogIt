@@ -10,18 +10,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.helha.mobilejustdogit.R;
 
-public class ChangePassword  extends AppCompatActivity {
+public class ChangePassword extends AppCompatActivity {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.new_mdp);
-        Button btn1 = (Button)findViewById(R.id.btn_mdp_confirm);
+        Button btn1 = (Button) findViewById(R.id.btn_mdp_confirm);
         ImageView back = (ImageView) findViewById(R.id.back_mdpNewcoord);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), ConfirmPassword.class);
                 startActivity(i);
                 ChangePassword.this.finish();
@@ -29,8 +28,7 @@ public class ChangePassword  extends AppCompatActivity {
         });
         back.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), mdpoublie.class);
                 startActivity(i);
                 ChangePassword.this.finish();
