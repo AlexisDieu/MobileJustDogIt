@@ -1,17 +1,12 @@
 package com.helha.mobilejustdogit;
 
 import android.os.Bundle;
-import android.view.ViewGroup;
+
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TableLayout;
-import android.widget.TableRow;
-import android.widget.Toast;
+
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import java.util.Locale;
-
 
 public class AddNewProduct extends AppCompatActivity {
 

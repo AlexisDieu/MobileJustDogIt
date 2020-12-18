@@ -16,7 +16,6 @@ import com.helha.mobilejustdogit.R;
 
 import java.util.List;
 
-import Modele.Animal;
 import Modele.Pension;
 
 public class PensionAdapter extends ArrayAdapter<Pension> {

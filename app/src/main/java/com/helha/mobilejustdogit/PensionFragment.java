@@ -16,7 +16,6 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
 
-import Adapter.AnimalAdapter;
 import Adapter.PensionAdapter;
 import Modele.Pension;
 import Repository.PensionRepository;

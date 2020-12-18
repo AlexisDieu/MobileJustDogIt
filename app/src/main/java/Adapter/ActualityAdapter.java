@@ -20,7 +20,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 import Modele.Actuality;
-import Modele.Pension;
+
 
 
 public class ActualityAdapter extends ArrayAdapter<Actuality> {

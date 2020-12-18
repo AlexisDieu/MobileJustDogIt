@@ -1,12 +1,10 @@
 package Repository;
 
 import android.util.Log;
-import android.widget.Toast;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import com.helha.mobilejustdogit.LoginFragment;
 
 import Modele.Authentificator;
 import Modele.Utilisateur;

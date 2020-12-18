@@ -8,11 +8,8 @@ import androidx.lifecycle.MutableLiveData;
 import java.util.List;
 
 import Modele.Actuality;
-import Modele.Pension;
-import api.AccountService;
 import api.ActualityService;
 import api.ApiClient;
-import api.PensionService;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

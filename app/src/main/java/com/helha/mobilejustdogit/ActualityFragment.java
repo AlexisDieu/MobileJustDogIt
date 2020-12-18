@@ -11,18 +11,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.ListView;
-
-import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import Adapter.ActualityAdapter;
 import Modele.Actuality;
-import Modele.Animal;
-import Modele.Pension;
+
 import Repository.ActualityRepository;
 
 /**

@@ -8,8 +8,6 @@ import androidx.lifecycle.MutableLiveData;
 import java.util.List;
 
 import Modele.Animal;
-import Modele.Utilisateur;
-import api.AccountService;
 import api.AnimalService;
 import api.ApiClient;
 import retrofit2.Call;

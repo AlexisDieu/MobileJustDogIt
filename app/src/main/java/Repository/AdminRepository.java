@@ -7,10 +7,8 @@ import androidx.lifecycle.MutableLiveData;
 
 import java.util.List;
 
-import Modele.Actuality;
 import Modele.ActualityInput;
 import Modele.Pension;
-import api.ActualityService;
 import api.AdminService;
 import api.ApiClient;
 import retrofit2.Call;

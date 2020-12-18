@@ -21,14 +21,10 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import Modele.Actuality;
 import Modele.ActualityInput;
-import Modele.Animal;
-import Modele.Habitat;
 import Modele.Pension;
-import Modele.Utilisateur;
 import Repository.AdminRepository;
-import api.AdminService;
+
 
 /**
  * A simple {@link Fragment} subclass.
