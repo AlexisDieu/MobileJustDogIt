@@ -36,9 +36,9 @@ public class NotLoggedFragment extends Fragment implements View.OnClickListener 
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_logout, container, false);
-        Button btn = (Button) rootView.findViewById(R.id.btn_deconnexion);
+       // Button btn = (Button) rootView.findViewById(R.id.btn_deconnexion);
 
-        btn.setOnClickListener(this);
+       // btn.setOnClickListener(this);
         return rootView;
     }
 
