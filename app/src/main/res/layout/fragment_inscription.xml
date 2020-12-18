@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:id="@+id/inscription_layout"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:overScrollMode="always"
+    android:scrollbarAlwaysDrawVerticalTrack="true"
+    android:scrollbarStyle="outsideInset"
+    android:scrollbars="vertical">
 
     <androidx.constraintlayout.widget.ConstraintLayout
 
@@ -91,8 +94,8 @@
 
         <EditText
             android:id="@+id/et_street"
-            android:layout_width="195dp"
-            android:layout_height="36dp"
+            android:layout_width="188dp"
+            android:layout_height="43dp"
             android:layout_marginTop="20dp"
             android:hint="rue"
             android:paddingLeft="20dp"
@@ -107,8 +110,8 @@
 
         <EditText
             android:id="@+id/et_number"
-            android:layout_width="195dp"
-            android:layout_height="36dp"
+            android:layout_width="196dp"
+            android:layout_height="46dp"
             android:layout_marginTop="20dp"
             android:hint="numero"
             android:paddingLeft="20dp"
@@ -140,8 +143,8 @@
 
         <EditText
             android:id="@+id/et_city"
-            android:layout_width="195dp"
-            android:layout_height="36dp"
+            android:layout_width="196dp"
+            android:layout_height="40dp"
             android:layout_marginTop="20dp"
             android:hint="Ville"
             android:paddingLeft="20dp"

@@ -21,14 +21,14 @@ public class AccountRepository {
         return ApiClient.GetRetrofit().create(AccountService.class);
     }
 
-    public LiveData<List<Utilisateur>> getUtilisateur(){
+    public LiveData<List<Utilisateur>> getListUtilisateur(final String token){
 
-        final MutableLiveData<List<Utilisateur>> utilisateurMutableLiveData = new MutableLiveData<>();
+        final MutableLiveData<List<Utilisateur>> utilisateurListMutableLiveData = new MutableLiveData<>();
 
-        getAccountService().Query().enqueue(new Callback<List<Utilisateur>>() {
+        getAccountService().Query(token).enqueue(new Callback<List<Utilisateur>>() {
             @Override
             public void onResponse(Call<List<Utilisateur>> call, Response<List<Utilisateur>> response) {
-                utilisateurMutableLiveData.postValue(response.body());
+                utilisateurListMutableLiveData.postValue(response.body());
                 Log.i("CallAPIUtilisateur", "onResponse: "+response.body());
             }
 
@@ -38,6 +38,26 @@ public class AccountRepository {
 
             }
         });
-        return utilisateurMutableLiveData;
+        return utilisateurListMutableLiveData;
+    }
+
+    public LiveData<Utilisateur> updateUtilisateur(final String token,int id,Utilisateur utilisateur){
+
+        final MutableLiveData<Utilisateur> utilisateurUpdateMutableLiveData = new MutableLiveData<>();
+
+        getAccountService().Update(token,id,utilisateur).enqueue(new Callback<Utilisateur>() {
+            @Override
+            public void onResponse(Call<Utilisateur> call, Response<Utilisateur> response) {
+                utilisateurUpdateMutableLiveData.postValue(response.body());
+                Log.i("CallAPIUtilisateur", "onResponse: "+response.code());
+            }
+
+            @Override
+            public void onFailure(Call<Utilisateur> call, Throwable t) {
+                Log.i("CallAPIUtilisateur", "onResponse: "+t.getMessage());
+
+            }
+        });
+        return utilisateurUpdateMutableLiveData;
     }
 }

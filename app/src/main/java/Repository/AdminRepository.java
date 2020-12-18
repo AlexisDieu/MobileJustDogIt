@@ -45,12 +45,12 @@ public class AdminRepository {
         return adminPensionMutableLiveData;
     }
 
-    public LiveData<ActualityInput> addActuality(ActualityInput actuality) {
+    public LiveData<ActualityInput> addActuality(final String token,ActualityInput actuality) {
 
         Log.i("CallAPIAdminRepo", "onResponse:  testttttt" );
         final MutableLiveData<ActualityInput> adminPensionMutableLiveData = new MutableLiveData<>();
 
-        adminApi().Create(actuality).enqueue(new Callback<ActualityInput>() {
+        adminApi().Create(token,actuality).enqueue(new Callback<ActualityInput>() {
             @Override
             public void onResponse(Call<ActualityInput> call, Response<ActualityInput> response) {
 

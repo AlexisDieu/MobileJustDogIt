@@ -128,13 +128,17 @@ public class AdminFragment extends Fragment implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
+        //Get back the token
+        SharedPreferences loginUser = v.getContext().getSharedPreferences("user", Context.MODE_PRIVATE);
+
+        String loginToken = loginUser.getString("loginKey","oui");
 
         if (dateAdmin.getText().toString().equals("") || infoAdmin.getText().toString().equals("")) {
             Toast.makeText(AdminFragment.this.getContext(), "Vous n'avez pas entrez toutes les informations requises", Toast.LENGTH_SHORT).show();
 
         } else {
             ActualityInput actuality = new ActualityInput(p1.getId(),dateAdmin.getText().toString(),infoAdmin.getText().toString());
-            adminRepository.addActuality(actuality)
+            adminRepository.addActuality(loginToken,actuality)
                     .observe(getViewLifecycleOwner(), new Observer<ActualityInput>() {
                         @Override
                         public void onChanged(ActualityInput actuality) {

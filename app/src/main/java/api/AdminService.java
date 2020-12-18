@@ -17,5 +17,5 @@ public interface AdminService {
     Call<List<Pension>> Query(@Header("Authorization") String authToken);
 
     @POST("api/actualite")
-    Call<ActualityInput> Create(@Body ActualityInput actualityInput);
+    Call<ActualityInput> Create(@Header("Authorization") String authToken,@Body ActualityInput actualityInput);
 }
