@@ -15,13 +15,13 @@ public class EmailFragment extends AppCompatActivity {
     private EditText mEditTextSujet;
     private EditText mEditTextMessage;
 
-    public void onCreate(Bundle savedInstanceState){
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_email);
 
         mEditTextA = findViewById(R.id.email_TextDe);
         mEditTextSujet = findViewById(R.id.email_Sujet);
-        mEditTextMessage= findViewById(R.id.edit_Texte_Message);
+        mEditTextMessage = findViewById(R.id.edit_Texte_Message);
         Button buttonEnvoyer = findViewById(R.id.button_Envoyer);
         buttonEnvoyer.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,7 +30,8 @@ public class EmailFragment extends AppCompatActivity {
             }
         });
     }
-    private void sendMail(){
+
+    private void sendMail() {
         String List = mEditTextA.getText().toString();
         String[] elements = List.split(",");
 
@@ -44,7 +45,6 @@ public class EmailFragment extends AppCompatActivity {
 
         intent.setType("message/rfc822");
         startActivity(Intent.createChooser(intent, "choisir l'email du client"));
-
 
 
     }

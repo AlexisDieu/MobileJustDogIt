@@ -18,7 +18,6 @@ import Repository.CreateUserRepository;
 
 /**
  * A simple {@link Fragment} subclass.
-
  */
 public class InscriptionFragment extends Fragment implements View.OnClickListener {
 
@@ -78,8 +77,7 @@ public class InscriptionFragment extends Fragment implements View.OnClickListene
                 || houseNumber.getText().toString().equals("") || city.getText().toString().equals("")) {
             Toast.makeText(InscriptionFragment.this.getContext(), "Vous n'avez pas entrez toutes les informations requises", Toast.LENGTH_SHORT).show();
 
-        }
-        else {
+        } else {
             habitat = new Habitat(street.getText().toString(), Integer.parseInt(cp.getText().toString()), houseNumber.getText().toString(), box.getText().toString(), city.getText().toString());
 
             Utilisateur util = new Utilisateur(nickname.getText().toString(), email.getText().toString(), password.getText().toString(),

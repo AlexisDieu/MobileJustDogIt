@@ -33,7 +33,6 @@ public class AdoptionFragment extends Fragment {
 
     final AnimalRepository animalRepository = new AnimalRepository();
     List<Animal> animals;
-
     ListView listAnimal;
 
     public AdoptionFragment() {
@@ -44,11 +43,9 @@ public class AdoptionFragment extends Fragment {
         return (new AdoptionFragment());
     }
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
 
     }
 
@@ -61,8 +58,7 @@ public class AdoptionFragment extends Fragment {
         listAnimal = root.findViewById(R.id.lv_animal);
         animals = new ArrayList<>();
 
-        final AnimalAdapter adapter = new AnimalAdapter(getContext(),R.id.lv_animal,animals);
-
+        final AnimalAdapter adapter = new AnimalAdapter(getContext(), R.id.lv_animal, animals);
         listAnimal.setAdapter(adapter);
 
 
@@ -72,12 +68,12 @@ public class AdoptionFragment extends Fragment {
                     @Override
                     public void onChanged(List<Animal> animal) {
                         animals.addAll(animal);
-                        Log.i("CallAPIanimal", "onChanged: "+animals.toString());
+                        Log.i("CallAPIanimal", "onChanged: " + animals.toString());
                         adapter.notifyDataSetChanged();
                     }
                 });
 
-        return  root;
+        return root;
 
     }
 }

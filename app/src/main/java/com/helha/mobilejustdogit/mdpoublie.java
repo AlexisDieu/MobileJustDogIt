@@ -23,13 +23,12 @@ public class mdpoublie extends AppCompatActivity implements View.OnClickListener
         setContentView(R.layout.mdp_oublie_activite);
         EditText email = findViewById(R.id.Mdp_oublie_email);
 
-        Button btn1 = (Button)findViewById(R.id.btn_suivant);
-        ImageView back = (ImageView)findViewById(R.id.back_mdpOublie);
+        Button btn1 = (Button) findViewById(R.id.btn_suivant);
+        ImageView back = (ImageView) findViewById(R.id.back_mdpOublie);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), ChangePassword.class);
                 startActivity(i);
                 mdpoublie.this.finish();
@@ -37,15 +36,12 @@ public class mdpoublie extends AppCompatActivity implements View.OnClickListener
         });
         back.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
 
                 mdpoublie.this.finish();
             }
         });
     }
-
-
 
 
     @Override
@@ -56,5 +52,5 @@ public class mdpoublie extends AppCompatActivity implements View.OnClickListener
             public void onChanged(Utilisateur utilisateur) {
 
             }*/
-        }
+    }
 }

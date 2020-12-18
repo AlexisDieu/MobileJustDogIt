@@ -47,14 +47,12 @@ public class NavigationActivity extends AppCompatActivity {
         });
 
 
-
-
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_adoption, R.id.nav_pension, R.id.nav_login, R.id.nav_inscription, R.id.nav_actuality,R.id.nav_profile)
+                R.id.nav_home, R.id.nav_adoption, R.id.nav_pension, R.id.nav_login, R.id.nav_inscription, R.id.nav_actuality, R.id.nav_profile, R.id.nav_notlogged)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
@@ -78,24 +76,25 @@ public class NavigationActivity extends AppCompatActivity {
             public void onDrawerClosed(@NonNull View drawerView) {
 
             }
+
             @Override
             public void onDrawerStateChanged(int newState) {
                 SharedPreferences loginUser = getSharedPreferences("user", Context.MODE_PRIVATE);
 
-                String loginToken = loginUser.getString("loginKey","");
-                final int idUser = loginUser.getInt("idKey",0);
+                String loginToken = loginUser.getString("loginKey", "");
+                final int idUser = loginUser.getInt("idKey", 0);
 
-                if(idUser == 0 || loginToken ==null){
+                if (idUser == 0 || loginToken == null) {
                     menu.findItem(R.id.nav_actuality).setEnabled(false);
                     menu.findItem(R.id.nav_pension).setEnabled(false);
-                    menu.findItem(R.id.nav_logout).setVisible(false);
+                    menu.findItem(R.id.nav_notlogged).setVisible(false);
                     menu.findItem(R.id.nav_profile).setVisible(false);
-                }
-                else {
+                } else {
                     menu.findItem(R.id.nav_actuality).setEnabled(true);
                     menu.findItem(R.id.nav_pension).setEnabled(true);
-                    menu.findItem(R.id.nav_logout).setVisible(true);
+                    menu.findItem(R.id.nav_notlogged).setVisible(true);
                     menu.findItem(R.id.nav_profile).setVisible(true);
+
                     menu.findItem(R.id.nav_login).setVisible(false);
                     menu.findItem(R.id.nav_inscription).setVisible(false);
                 }

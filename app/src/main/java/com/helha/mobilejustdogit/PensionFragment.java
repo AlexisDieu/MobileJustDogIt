@@ -49,19 +49,19 @@ public class PensionFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_pension, container, false);
+        View view = inflater.inflate(R.layout.fragment_pension, container, false);
 
         //Get back the token
         SharedPreferences loginUser = view.getContext().getSharedPreferences("user", Context.MODE_PRIVATE);
 
-        String loginToken = loginUser.getString("loginKey","oui");
+        String loginToken = loginUser.getString("loginKey", "oui");
         Log.i("CallAPI", loginToken);
-        final int idUser = loginUser.getInt("idKey",0);
+        final int idUser = loginUser.getInt("idKey", 0);
 
         listViewPension = view.findViewById(R.id.lv_pension);
         pensionList = new ArrayList<>();
 
-        final PensionAdapter adapter = new PensionAdapter(getContext(),R.id.lv_pension,pensionList);
+        final PensionAdapter adapter = new PensionAdapter(getContext(), R.id.lv_pension, pensionList);
 
         listViewPension.setAdapter(adapter);
 
@@ -70,12 +70,12 @@ public class PensionFragment extends Fragment {
 
                     @Override
                     public void onChanged(List<Pension> pensions) {
-                        for (Pension p:pensions) {
-                            if(p.getUtilisateur().getId()== idUser)
-                            pensionList.add(p);
+                        for (Pension p : pensions) {
+                            if (p.getUtilisateur().getId() == idUser)
+                                pensionList.add(p);
                         }
                         adapter.notifyDataSetChanged();
-                        Log.i("CallAPIpensionFrag", "onChanged: "+pensions.toString());
+                        Log.i("CallAPIpensionFrag", "onChanged: " + pensions.toString());
 
 
                     }
