@@ -32,7 +32,7 @@ public class PensionFragment extends Fragment {
     ListView listViewPension;
 
     public PensionFragment() {
-        // Required empty public constructor
+        // Constructeur vide
     }
 
     public static PensionFragment newInstance() {
@@ -48,10 +48,10 @@ public class PensionFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         View view= inflater.inflate(R.layout.fragment_pension, container, false);
 
-        //Get back the token
+        //Retourner le token
         SharedPreferences loginUser = view.getContext().getSharedPreferences("user", Context.MODE_PRIVATE);
 
         String loginToken = loginUser.getString("loginKey","oui");

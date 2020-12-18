@@ -15,7 +15,6 @@ import java.util.Locale;
 
 public class AddNewProduct extends AppCompatActivity {
 
-
     private String Nom_categorie;
     private Button AJouterAnimal, Annuler;
     private EditText Description_animal, couleur_animal, race_animal, nom_animal, datenaiss_animal;

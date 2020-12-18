@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.helha.mobilejustdogit.R;
 
@@ -20,7 +21,7 @@ public class LogoutFragment extends Fragment {
 
 
     public LogoutFragment() {
-        // Required empty public constructor
+        // Constructeur vide
     }
 
 
@@ -35,12 +36,12 @@ public class LogoutFragment extends Fragment {
 
         View view= inflater.inflate(R.layout.fragment_logout, container, false);
 
-        //When deconnected == do an editor.clear to reset the user
+        //Quand on se déconnecte, on deconnexte l'utilisateur
         SharedPreferences loginusers = getContext().getSharedPreferences("user", Context.MODE_PRIVATE);
         SharedPreferences.Editor userEditor = loginusers.edit();
+        Toast.makeText(LogoutFragment.this.getContext(), "Déconnexion réussie", Toast.LENGTH_LONG).show();
         userEditor.clear();
         userEditor.apply();
-
         getActivity().onBackPressed();
 
         return view;

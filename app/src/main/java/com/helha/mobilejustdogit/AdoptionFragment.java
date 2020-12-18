@@ -30,13 +30,12 @@ import Repository.CreateUserRepository;
  */
 public class AdoptionFragment extends Fragment {
 
-
     final AnimalRepository animalRepository = new AnimalRepository();
     List<Animal> animals;
     ListView listAnimal;
 
     public AdoptionFragment() {
-        // Required empty public constructor
+        // Constructeur vide
     }
 
     public static AdoptionFragment newInstance() {

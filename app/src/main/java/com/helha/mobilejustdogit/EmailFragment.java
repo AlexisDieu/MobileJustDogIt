@@ -17,7 +17,7 @@ public class EmailFragment extends AppCompatActivity {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_email);
+        setContentView(R.layout.activity_email);
 
         mEditTextA = findViewById(R.id.email_TextDe);
         mEditTextSujet = findViewById(R.id.email_Sujet);

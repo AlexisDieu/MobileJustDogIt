@@ -30,11 +30,7 @@
         android:label="Login"
         tools:layout="@layout/fragment_login"
         />
-    <fragment
-        android:id="@+id/nav_notlogged"
-        android:name="com.helha.mobilejustdogit.NotLoggedFragment"
-        android:label="Not Logged"
-        tools:layout="@layout/fragment_not_logged"/>
+
     <fragment
         android:id="@+id/nav_actuality"
         android:name="com.helha.mobilejustdogit.ActualityFragment"
@@ -64,7 +60,7 @@
         android:id="@+id/nav_profile"
         android:name="com.helha.mobilejustdogit.ProfileFragment"
         android:label="Profile"
-        tools:layout="@layout/profile_fragment"
+        tools:layout="@layout/fragment_profile"
         />
 
 </navigation>

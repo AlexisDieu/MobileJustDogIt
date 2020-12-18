@@ -8,13 +8,11 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.helha.mobilejustdogit.R;
-
 public class ChangePassword extends AppCompatActivity {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.new_mdp);
+        setContentView(R.layout.activity_new_mdp);
         Button btn1 = (Button) findViewById(R.id.btn_mdp_confirm);
         ImageView back = (ImageView) findViewById(R.id.back_mdpNewcoord);
 

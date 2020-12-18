@@ -5,34 +5,22 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.Toast;
 
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 
 import com.google.android.material.textfield.TextInputEditText;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
-import Adapter.PensionAdapter;
-import Modele.Actuality;
-import Modele.Habitat;
-import Modele.Pension;
 import Modele.Utilisateur;
 import Repository.AccountRepository;
 
-public class ProfileFragment extends Fragment /*implements View.OnClickListener*/{
+public class ProfileFragment extends Fragment /*implements View.OnClickListener*/ {
 
     final AccountRepository accountRepository = new AccountRepository();
 
@@ -49,13 +37,13 @@ public class ProfileFragment extends Fragment /*implements View.OnClickListener*
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View root = inflater.inflate(R.layout.profile_fragment, container, false);
+        View root = inflater.inflate(R.layout.fragment_profile, container, false);
 
         //Get back the token
         SharedPreferences loginUser = root.getContext().getSharedPreferences("user", Context.MODE_PRIVATE);
 
-        String loginToken = loginUser.getString("loginKey","oui");
-        final int idUser = loginUser.getInt("idKey",0);
+        String loginToken = loginUser.getString("loginKey", "oui");
+        final int idUser = loginUser.getInt("idKey", 0);
 
 
        /* btnPassword = (Button) root.findViewById(R.id.btn_update_password);
@@ -72,7 +60,7 @@ public class ProfileFragment extends Fragment /*implements View.OnClickListener*
         textNewPassword = (TextInputEditText) root.findViewById(R.id.Nouveau_MotDePasse);
         textConfirmPassword = (TextInputEditText) root.findViewById(R.id.ConfirmerMotDePasse);
 
-        textPseudo= (TextInputEditText) root.findViewById(R.id.text_pseudo);
+        textPseudo = (TextInputEditText) root.findViewById(R.id.text_pseudo);
         textEmail = (TextInputEditText) root.findViewById(R.id.text_email);
 
         utilisateurList = new ArrayList<>();
@@ -88,7 +76,6 @@ public class ProfileFragment extends Fragment /*implements View.OnClickListener*
                         Log.i("idcheck", idUser +""+ utilisateurList.toString());
                     }
                 });*/
-
 
 
         // fetch user and show profile data

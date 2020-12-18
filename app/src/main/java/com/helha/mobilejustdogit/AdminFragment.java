@@ -33,7 +33,7 @@ import api.AdminService;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class AdminFragment extends Fragment implements View.OnClickListener{
+public class AdminFragment extends Fragment implements View.OnClickListener {
 
     final AdminRepository adminRepository = new AdminRepository();
 
@@ -50,7 +50,7 @@ public class AdminFragment extends Fragment implements View.OnClickListener{
 
 
     public AdminFragment() {
-        // Required empty public constructor
+        // Constructeur vide
     }
 
 
@@ -68,9 +68,9 @@ public class AdminFragment extends Fragment implements View.OnClickListener{
         //Get back the token
         SharedPreferences loginUser = view.getContext().getSharedPreferences("user", Context.MODE_PRIVATE);
 
-        String loginToken = loginUser.getString("loginKey","oui");
+        String loginToken = loginUser.getString("loginKey", "oui");
         Log.i("CallAPI", loginToken);
-        final int idUser = loginUser.getInt("idKey",0);
+        final int idUser = loginUser.getInt("idKey", 0);
 
         Button btn = (Button) view.findViewById(R.id.btn_admin);
         btn.setOnClickListener(this);
@@ -82,13 +82,12 @@ public class AdminFragment extends Fragment implements View.OnClickListener{
         infoAdmin = view.findViewById(R.id.et_description);
 
 
-
         pensionList = new ArrayList<>();
         animalList = new ArrayList<>();
         userList = new ArrayList<>();
 
 
-        final ArrayAdapter<Pension> pensionArrayAdapter = new ArrayAdapter<>((getContext()),android.R.layout.simple_spinner_item, pensionList);
+        final ArrayAdapter<Pension> pensionArrayAdapter = new ArrayAdapter<>((getContext()), android.R.layout.simple_spinner_item, pensionList);
 
         spinPension.setAdapter(pensionArrayAdapter);
 
@@ -97,13 +96,13 @@ public class AdminFragment extends Fragment implements View.OnClickListener{
 
                     @Override
                     public void onChanged(List<Pension> pensions) {
-                        for (Pension p:pensions) {
-                                pensionArrayAdapter.add(p);
-                                 animalList.add(p.getAnimal().getNom());
-                                 userList.add(p.getUtilisateur().getPseudo());
+                        for (Pension p : pensions) {
+                            pensionArrayAdapter.add(p);
+                            animalList.add(p.getAnimal().getNom());
+                            userList.add(p.getUtilisateur().getPseudo());
                         }
                         pensionArrayAdapter.notifyDataSetChanged();
-                        Log.i("CallAPIactualityFrag", "onChanged: "+pensions.toString());
+                        Log.i("CallAPIactualityFrag", "onChanged: " + pensions.toString());
 
                     }
                 });
@@ -131,14 +130,14 @@ public class AdminFragment extends Fragment implements View.OnClickListener{
         //Get back the token
         SharedPreferences loginUser = v.getContext().getSharedPreferences("user", Context.MODE_PRIVATE);
 
-        String loginToken = loginUser.getString("loginKey","oui");
+        String loginToken = loginUser.getString("loginKey", "oui");
 
         if (dateAdmin.getText().toString().equals("") || infoAdmin.getText().toString().equals("")) {
             Toast.makeText(AdminFragment.this.getContext(), "Vous n'avez pas entrez toutes les informations requises", Toast.LENGTH_SHORT).show();
 
         } else {
-            ActualityInput actuality = new ActualityInput(p1.getId(),dateAdmin.getText().toString(),infoAdmin.getText().toString());
-            adminRepository.addActuality(loginToken,actuality)
+            ActualityInput actuality = new ActualityInput(p1.getId(), dateAdmin.getText().toString(), infoAdmin.getText().toString());
+            adminRepository.addActuality(loginToken, actuality)
                     .observe(getViewLifecycleOwner(), new Observer<ActualityInput>() {
                         @Override
                         public void onChanged(ActualityInput actuality) {

@@ -2,42 +2,80 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:id="@+id/home_layout"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="408dp"
+        android:layout_height="328dp"
+        android:src="@mipmap/logo_dogit_foreground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="30dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="144dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/icon_patte"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
     <TextView
         android:id="@+id/txt_title_home"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_width="413dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="320dp"
+        android:text="@string/Welcome1"
         android:textAlignment="center"
         android:textColor="@color/pensionColor"
         android:textSize="35sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btn_home_goPension"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="176dp"
-        android:text="Vers la pension"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_title_home" />
+    vous et vos animaux
 
-    <Button
-        android:id="@+id/btn_home_goAdoption"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:text="Vers l'adoption"
+    <TextView
+        android:id="@+id/suite_texte"
+        android:layout_width="413dp"
+        android:layout_height="71dp"
+        android:text="@string/welcome2"
+        android:textAlignment="center"
+        android:textColor="@color/pensionColor"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/Copyright"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_home_goPension" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_title_home"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/suite_texte2"
+        android:layout_width="413dp"
+        android:layout_height="71dp"
+        android:text="@string/welcome3"
+        android:textAlignment="center"
+        android:textColor="@color/pensionColor"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/suite_texte"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

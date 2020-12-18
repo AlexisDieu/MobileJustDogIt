@@ -21,7 +21,7 @@ import com.helha.mobilejustdogit.AdoptionFragment;
 import com.helha.mobilejustdogit.PensionFragment;
 import com.helha.mobilejustdogit.R;
 
-public class HomeFragment extends Fragment implements View.OnClickListener {
+public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
 
@@ -31,11 +31,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
         final TextView textView = root.findViewById(R.id.txt_title_home);
-        final Button btn_goToAdoption = (Button) root.findViewById(R.id.btn_home_goAdoption);
-        final Button btn_goToPension = (Button) root.findViewById(R.id.btn_home_goPension);
 
-        btn_goToAdoption.setOnClickListener(this);
-        btn_goToPension.setOnClickListener(this);
 
         homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
@@ -43,31 +39,5 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         });
 
         return root;
-    }
-
-    @Override
-    public void onClick(View v) {
-        Fragment fragment = null;
-
-        switch (v.getId()) {
-            case R.id.btn_home_goAdoption :
-                fragment = new AdoptionFragment();
-                replaceFragment(fragment);
-                /*NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-                NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
-                NavigationUI.setupWithNavController(navigationView, navController);*/
-
-                break;
-            case R.id.btn_home_goPension :
-                fragment = new PensionFragment();
-                replaceFragment(fragment);
-                break;
-        }
-    }
-
-    private void replaceFragment(Fragment fragment) {
-        FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        transaction.replace(R.id.nav_host_fragment, fragment);
-        transaction.commit();
     }
 }

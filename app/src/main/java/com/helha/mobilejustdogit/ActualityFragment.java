@@ -34,14 +34,12 @@ public class ActualityFragment extends Fragment {
 
     List<Actuality> actualityList;
 
-    private int images =R.mipmap.ic_launcher_foreground;
-
-
-            ListView listViewActuality;
+    private int images = R.mipmap.ic_launcher_foreground;
+    ListView listViewActuality;
 
 
     public ActualityFragment() {
-        // Required empty public constructor
+        // Constructeur vide
     }
 
     @Override

@@ -15,12 +15,11 @@ import Repository.AuthentificateRepository;
 
 public class mdpoublie extends AppCompatActivity implements View.OnClickListener {
     final AuthentificateRepository authentificateRepository = new AuthentificateRepository();
-    EditText email;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.mdp_oublie_activite);
+        setContentView(R.layout.activity_mdo_oublie);
         EditText email = findViewById(R.id.Mdp_oublie_email);
 
         Button btn1 = (Button) findViewById(R.id.btn_suivant);

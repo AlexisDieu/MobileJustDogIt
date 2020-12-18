@@ -42,7 +42,6 @@ public class NavigationActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), EmailFragment.class);
                 startActivity(i);
-
             }
         });
 
@@ -51,8 +50,7 @@ public class NavigationActivity extends AppCompatActivity {
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
+        //passage de chaque item dans la bar
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_adoption, R.id.nav_pension,R.id.nav_login,R.id.nav_inscription,R.id.nav_admin,R.id.nav_actuality,R.id.nav_profile)
                 .setDrawerLayout(drawer)
@@ -111,12 +109,7 @@ public class NavigationActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.navigation, menu);
-        return true;
-    }
+
 
     @Override
     public boolean onSupportNavigateUp() {
@@ -125,8 +118,4 @@ public class NavigationActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
-
-    public Menu getMenu() {
-        return menu;
-    }
 }

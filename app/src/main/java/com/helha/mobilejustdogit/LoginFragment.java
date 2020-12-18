@@ -39,7 +39,6 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
     final AuthentificateRepository authentificateRepository = new AuthentificateRepository();
     EditText email;
-    Menu menu;
     EditText password;
 
     public LoginFragment() {
