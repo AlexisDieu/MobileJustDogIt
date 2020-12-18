@@ -54,7 +54,7 @@ public class NavigationActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_adoption, R.id.nav_pension,R.id.nav_login,R.id.nav_inscription,R.id.nav_actuality)
+                R.id.nav_home, R.id.nav_adoption, R.id.nav_pension,R.id.nav_login,R.id.nav_inscription,R.id.nav_admin,R.id.nav_actuality)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
@@ -84,12 +84,15 @@ public class NavigationActivity extends AppCompatActivity {
 
                 String loginToken = loginUser.getString("loginKey","");
                 final int idUser = loginUser.getInt("idKey",0);
-
+                final String roleUser = loginUser.getString("roleKey", "");
                 if(idUser == 0 || loginToken ==null){
                     menu.findItem(R.id.nav_actuality).setEnabled(false);
                     menu.findItem(R.id.nav_pension).setEnabled(false);
                     menu.findItem(R.id.nav_logout).setVisible(false);
                     menu.findItem(R.id.nav_profile).setVisible(false);
+                    menu.findItem(R.id.nav_login).setVisible(true);
+                    menu.findItem(R.id.nav_inscription).setVisible(true);
+                    menu.findItem(R.id.nav_admin).setVisible(false);
                 }
                 else {
                     menu.findItem(R.id.nav_actuality).setEnabled(true);
@@ -98,6 +101,10 @@ public class NavigationActivity extends AppCompatActivity {
                     menu.findItem(R.id.nav_profile).setVisible(true);
                     menu.findItem(R.id.nav_login).setVisible(false);
                     menu.findItem(R.id.nav_inscription).setVisible(false);
+                    menu.findItem(R.id.nav_admin).setVisible(false);
+                }
+                if(roleUser.equals("ADMIN")){
+                    menu.findItem(R.id.nav_admin).setVisible(true);
                 }
             }
         });

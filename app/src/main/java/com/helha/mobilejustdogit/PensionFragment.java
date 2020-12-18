@@ -70,14 +70,13 @@ public class PensionFragment extends Fragment {
 
                     @Override
                     public void onChanged(List<Pension> pensions) {
-                        for (Pension p:pensions) {
-                            if(p.getUtilisateur().getId()== idUser)
-                            pensionList.add(p);
-                        }
-                        adapter.notifyDataSetChanged();
-                        Log.i("CallAPIpensionFrag", "onChanged: "+pensions.toString());
 
-
+                            for (Pension p : pensions) {
+                                if (p.getUtilisateur().getId() == idUser)
+                                    pensionList.add(p);
+                            }
+                            adapter.notifyDataSetChanged();
+                            Log.i("CallAPIpensionFrag", "onChanged: " + pensions.toString());
                     }
                 });
 

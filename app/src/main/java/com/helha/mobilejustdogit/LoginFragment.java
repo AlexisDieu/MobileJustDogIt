@@ -101,16 +101,14 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                     Toast.makeText(LoginFragment.this.getContext(), "Connexion réussie", Toast.LENGTH_LONG).show();
                     getActivity().onBackPressed();
 
+                    //create a token when login
                     SharedPreferences loginuser = getContext().getSharedPreferences("user", Context.MODE_PRIVATE);
                     SharedPreferences.Editor userEditor = loginuser.edit();
                     userEditor.putString("loginKey", utilisateur.getJWTBearer());
                     userEditor.putInt("idKey", utilisateur.getId());
+                    userEditor.putString("roleKey", utilisateur.getRole());
                     userEditor.apply();
-                    //When deconnected == do an editor.clear to reset the user
-                    /*SharedPreferences loginusers = getContext().getSharedPreferences("user", Context.MODE_PRIVATE);
-                    SharedPreferences.Editor userEditors = loginusers.edit();
-                    userEditors.clear();
-                    userEditor.apply();*/
+
 
                 }
                 else{

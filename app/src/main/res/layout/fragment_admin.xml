@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminFragment"
+    android:id="@+id/admin">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:id="@+id/tv_admin_title"
+        android:layout_width="323dp"
+        android:layout_height="62dp"
+        android:gravity="center"
+        android:text="Admin Menu"
+        android:textSize="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Spinner
+        android:id="@+id/sp_pension"
+        android:layout_width="218dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="76dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_admin_title" />
+
+
+    <EditText
+        android:id="@+id/et_description"
+        android:layout_width="258dp"
+        android:layout_height="129dp"
+        android:layout_marginTop="72dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
+
+    <Button
+        android:id="@+id/btn_admin"
+        android:layout_width="141dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="44dp"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_description" />
+
+    <EditText
+        android:id="@+id/editTextDate"
+        android:layout_width="218dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="132dp"
+        android:ems="10"
+        android:inputType="date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sp_pension" />
+
+    <TextView
+        android:id="@+id/tv_admin_user"
+        android:layout_width="115dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="40dp"
+        android:hint="Nom Utilisateur"
+        app:layout_constraintEnd_toStartOf="@+id/tv_admin_animal"
+        app:layout_constraintHorizontal_bias="0.423"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sp_pension" />
+
+    <TextView
+        android:id="@+id/tv_admin_animal"
+        android:layout_width="115dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="64dp"
+        android:hint="Nom animal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sp_pension" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

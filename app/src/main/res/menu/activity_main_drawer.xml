@@ -38,6 +38,11 @@
             android:title="Inscription"
             android:icon="@drawable/valid_foreground"
             />
+        <item
+            android:id="@+id/nav_admin"
+            android:title="Admin"
+            android:icon="@drawable/valid_foreground"
+            />
             </group>
         </menu>
     </item>

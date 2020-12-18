@@ -8,30 +8,28 @@ import androidx.lifecycle.MutableLiveData;
 import java.util.List;
 
 import Modele.Actuality;
-import Modele.Pension;
-import api.AccountService;
 import api.ActualityService;
+import api.AdminService;
 import api.ApiClient;
-import api.PensionService;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ActualityRepository {
+public class AdminRepository {
 
-    public ActualityService actualityApi() {
-        return ApiClient.GetRetrofit().create(ActualityService.class);
+    public AdminService adminApi() {
+        return ApiClient.GetRetrofit().create(AdminService.class);
     }
 
     public LiveData<List<Actuality>> showActualityList(final String token) {
 
-        final MutableLiveData<List<Actuality>> pensionMutableLiveData = new MutableLiveData<>();
+        final MutableLiveData<List<Actuality>> adminActualityMutableLiveData = new MutableLiveData<>();
 
-        actualityApi().Query(token).enqueue(new Callback<List<Actuality>>() {
+        adminApi().Query(token).enqueue(new Callback<List<Actuality>>() {
             @Override
             public void onResponse(Call<List<Actuality>> call, Response<List<Actuality>> response) {
                 if(response.isSuccessful()) {
-                    pensionMutableLiveData.postValue(response.body());
+                    adminActualityMutableLiveData.postValue(response.body());
                     Log.i("CallAPIactualityRepo", "onResponse: " + response.body());
                 }
             }
@@ -42,6 +40,7 @@ public class ActualityRepository {
             }
         });
 
-        return pensionMutableLiveData;
+        return adminActualityMutableLiveData;
     }
+
 }

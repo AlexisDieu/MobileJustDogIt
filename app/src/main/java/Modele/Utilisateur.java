@@ -10,7 +10,7 @@ public class Utilisateur {
     private String tel ;
     private String tel2 ;
     private String token;
-    private String Role;
+    private String role;
 
     public Utilisateur(String pseudo, String email, String mdp, Habitat habitat, String tel, String tel2) {
 
@@ -91,11 +91,11 @@ public class Utilisateur {
     }
 
     public String getRole() {
-        return Role;
+        return role;
     }
 
     public void setRole(String role) {
-        Role = role;
+        role = role;
     }
 
     @Override
@@ -109,7 +109,7 @@ public class Utilisateur {
                 ", tel='" + tel + '\'' +
                 ", tel2='" + tel2 + '\'' +
                 ", token='" + token + '\'' +
-                ", Role='" + Role + '\'' +
+                ", role='" + role + '\'' +
                 '}';
     }
 }

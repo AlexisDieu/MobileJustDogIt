@@ -27,8 +27,10 @@ public class PensionRepository {
         pensionApi().Query(token).enqueue(new Callback<List<Pension>>() {
             @Override
             public void onResponse(Call<List<Pension>> call, Response<List<Pension>> response) {
-                pensionMutableLiveData.postValue(response.body());
-                Log.i("CallAPIpensionRepo", "onResponse: " + response.body());
+                if(response.isSuccessful()) {
+                    pensionMutableLiveData.postValue(response.body());
+                    Log.i("CallAPIpensionRepo", "onResponse: " + response.body());
+                }
             }
 
             @Override
