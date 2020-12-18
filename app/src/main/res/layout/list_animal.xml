@@ -4,44 +4,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
+<LinearLayout
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="0dp"
-        android:layout_height="128dp"
+
+        android:layout_width="200dp"
+        android:layout_height="142dp"
+        android:layout_marginEnd="5dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tv_images_images"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/tv_name"
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="name" />
 
         <TextView
             android:id="@+id/tv_birthday"
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="birthday" />
 
         <TextView
             android:id="@+id/tv_color"
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="color" />
 
         <TextView
             android:id="@+id/tv_race"
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="race" />
 
         <TextView
             android:id="@+id/tv_typeAnimal"
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="type" />
+
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/tv_images_images"
+        android:layout_width="200dp"
+        android:layout_height="143dp"
+        android:layout_marginEnd="9dp"/>
+</LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

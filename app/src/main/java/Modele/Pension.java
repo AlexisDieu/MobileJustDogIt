@@ -82,9 +82,4 @@ public class Pension {
                 ", prix=" + prix +
                 '}';
     }
-
-    public int getImages()
-    {
-        return images=R.mipmap.ic_launcher_foreground;
-    }
 }

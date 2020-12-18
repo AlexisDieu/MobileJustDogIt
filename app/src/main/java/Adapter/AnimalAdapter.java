@@ -2,10 +2,12 @@ package Adapter;
 
 import android.content.Context;
 import android.os.Build;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -45,6 +47,18 @@ public class AnimalAdapter extends ArrayAdapter<Animal> {
         TextView color = animalview.findViewById(R.id.tv_color);
         TextView race = animalview.findViewById(R.id.tv_race);
         TextView type = animalview.findViewById(R.id.tv_typeAnimal);
+        ImageView images = animalview.findViewById(R.id.tv_images_images);
+        String e =  animal.getTypeAnimal();
+        if(e.equals("Chat"))
+        {
+            images.setImageResource(R.mipmap.cat_image_foreground);
+
+        }
+        else
+        {
+            images.setImageResource(R.mipmap.ic_launcher_foreground);
+
+        }
 
         name.setText(animal.getNom());
         birthday.setText(FormatDate(animal.getDateNaissance()));

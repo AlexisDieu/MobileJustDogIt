@@ -16,24 +16,27 @@ import retrofit2.Response;
 
 public class AnimalRepository {
 
-    public AnimalService animalApi(){
+    public AnimalService animalApi() {
         return ApiClient.GetRetrofit().create(AnimalService.class);
     }
 
-    public LiveData<List<Animal>> showAnimalList(){
+    public LiveData<List<Animal>> showAnimalList() {
 
-        final MutableLiveData<List<Animal>>animalMutableLiveData = new MutableLiveData<>();
+        final MutableLiveData<List<Animal>> animalMutableLiveData = new MutableLiveData<>();
 
         animalApi().Query().enqueue(new Callback<List<Animal>>() {
             @Override
             public void onResponse(Call<List<Animal>> call, Response<List<Animal>> response) {
-                animalMutableLiveData.postValue(response.body());
-                Log.i("CallAPIanimal", "onResponse: "+response.body());
+                if (response.isSuccessful()) {
+
+                    animalMutableLiveData.postValue(response.body());
+                    Log.i("CallAPIanimal", "onResponse: " + response.body());
+                }
             }
 
             @Override
             public void onFailure(Call<List<Animal>> call, Throwable t) {
-                Log.i("CallAPIanimal", "onError "+t.getMessage());
+                Log.i("CallAPIanimal", "onError " + t.getMessage());
             }
         });
 

@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -54,7 +55,6 @@ public class AdoptionFragment extends Fragment {
 
         final AnimalAdapter adapter = new AnimalAdapter(getContext(), R.id.lv_animal, animals);
         listAnimal.setAdapter(adapter);
-
 
         animalRepository.showAnimalList()
                 .observe(this.getViewLifecycleOwner(), new Observer<List<Animal>>() {

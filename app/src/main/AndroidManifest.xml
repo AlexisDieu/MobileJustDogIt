@@ -11,13 +11,16 @@
         android:roundIcon="@mipmap/logo_dogit"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".NavigationActivity">
+        <activity android:name=".NavigationActivity"
+            android:windowSoftInputMode="adjustPan">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".mdpoublie"/>
         <activity android:name=".ChangePassword"/>
         <activity android:name=".ConfirmPassword"/>

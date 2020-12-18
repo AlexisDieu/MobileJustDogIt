@@ -22,20 +22,7 @@
 
     <include layout="@layout/content_main" />
 
-    <TextView
-        android:id="@+id/Copyright"
-        android:layout_width="175dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="600dp"
-        android:text="Copyright © 2020 JustDogIt team"
-        android:gravity="center"
-        android:textSize="10sp"
-        android:layout_gravity="bottom"
-        android:textStyle="italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
