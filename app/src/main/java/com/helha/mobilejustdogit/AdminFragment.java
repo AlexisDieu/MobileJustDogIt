@@ -13,14 +13,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import Modele.Actuality;
+import Modele.ActualityInput;
 import Modele.Animal;
+import Modele.Habitat;
 import Modele.Pension;
 import Modele.Utilisateur;
 import Repository.AdminRepository;
@@ -29,17 +33,20 @@ import api.AdminService;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class AdminFragment extends Fragment {
+public class AdminFragment extends Fragment implements View.OnClickListener{
 
     final AdminRepository adminRepository = new AdminRepository();
 
     Spinner spinPension;
     TextView textViewUser;
     TextView textViewAnimal;
+    TextView dateAdmin;
+    TextView infoAdmin;
 
     List<Pension> pensionList;
     List<String> userList;
     List<String> animalList;
+    Pension p1;
 
 
     public AdminFragment() {
@@ -65,9 +72,16 @@ public class AdminFragment extends Fragment {
         Log.i("CallAPI", loginToken);
         final int idUser = loginUser.getInt("idKey",0);
 
+        Button btn = (Button) view.findViewById(R.id.btn_admin);
+        btn.setOnClickListener(this);
+
         spinPension = view.findViewById(R.id.sp_pension);
         textViewAnimal = view.findViewById(R.id.tv_admin_animal);
         textViewUser = view.findViewById(R.id.tv_admin_user);
+        dateAdmin = view.findViewById(R.id.et_date_admin);
+        infoAdmin = view.findViewById(R.id.et_description);
+
+
 
         pensionList = new ArrayList<>();
         animalList = new ArrayList<>();
@@ -78,18 +92,18 @@ public class AdminFragment extends Fragment {
 
         spinPension.setAdapter(pensionArrayAdapter);
 
-        adminRepository.showActualityList(loginToken)
-                .observe(this.getViewLifecycleOwner(), new Observer<List<Actuality>>() {
+        adminRepository.getPension(loginToken)
+                .observe(this.getViewLifecycleOwner(), new Observer<List<Pension>>() {
 
                     @Override
-                    public void onChanged(List<Actuality> actualities) {
-                        for (Actuality a:actualities) {
-                                pensionArrayAdapter.add(a.getPension());
-                                 animalList.add(a.getPension().getAnimal().getNom());
-                                 userList.add(a.getPension().getUtilisateur().getPseudo());
+                    public void onChanged(List<Pension> pensions) {
+                        for (Pension p:pensions) {
+                                pensionArrayAdapter.add(p);
+                                 animalList.add(p.getAnimal().getNom());
+                                 userList.add(p.getUtilisateur().getPseudo());
                         }
                         pensionArrayAdapter.notifyDataSetChanged();
-                        Log.i("CallAPIactualityFrag", "onChanged: "+actualities.toString());
+                        Log.i("CallAPIactualityFrag", "onChanged: "+pensions.toString());
 
                     }
                 });
@@ -100,6 +114,7 @@ public class AdminFragment extends Fragment {
 
                 textViewAnimal.setText(animalList.get(position));
                 textViewUser.setText(userList.get(position));
+                p1 = pensionList.get(position);
             }
 
             @Override
@@ -109,5 +124,30 @@ public class AdminFragment extends Fragment {
         });
 
         return view;
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        if (dateAdmin.getText().toString().equals("") || infoAdmin.getText().toString().equals("")) {
+            Toast.makeText(AdminFragment.this.getContext(), "Vous n'avez pas entrez toutes les informations requises", Toast.LENGTH_SHORT).show();
+
+        } else {
+            ActualityInput actuality = new ActualityInput(p1.getId(),dateAdmin.getText().toString(),infoAdmin.getText().toString());
+            adminRepository.addActuality(actuality)
+                    .observe(getViewLifecycleOwner(), new Observer<ActualityInput>() {
+                        @Override
+                        public void onChanged(ActualityInput actuality) {
+                            if (actuality != null) {
+                                Toast.makeText(AdminFragment.this.getContext(), "Ajouter à la Base de donnée", Toast.LENGTH_LONG).show();
+                            } else {
+                                Toast.makeText(AdminFragment.this.getContext(), "L'objet voulu est null", Toast.LENGTH_LONG).show();
+                            }
+
+                        }
+
+                    });
+        }
+
     }
 }

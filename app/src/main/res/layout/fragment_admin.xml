@@ -36,30 +36,30 @@
         android:id="@+id/et_description"
         android:layout_width="258dp"
         android:layout_height="129dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="24dp"
         android:ems="10"
         android:gravity="center"
         android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
+        app:layout_constraintTop_toBottomOf="@+id/et_date_admin" />
 
     <Button
         android:id="@+id/btn_admin"
         android:layout_width="141dp"
         android:layout_height="59dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="24dp"
         android:text="Button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_description" />
 
     <EditText
-        android:id="@+id/editTextDate"
+        android:id="@+id/et_date_admin"
         android:layout_width="218dp"
         android:layout_height="50dp"
-        android:layout_marginTop="132dp"
+        android:layout_marginTop="88dp"
         android:ems="10"
         android:inputType="date"
         app:layout_constraintEnd_toEndOf="parent"

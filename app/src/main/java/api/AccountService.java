@@ -19,9 +19,6 @@ public interface AccountService {
     @POST("api/util/authentification")
     Call<Utilisateur> GetIdByAuthentification(@Body Authentificator authentificator);
 
-    /*   @POST("api/util/authentification")
-    Call<Utilisateur> GetIdByAuthentification(@Header ("Authorization") String authToken,@Body Authentificator authentificator);*/
-
     @POST("api/util")
     Call<Utilisateur> Create(@Body Utilisateur utilisateur);
 

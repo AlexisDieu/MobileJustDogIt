@@ -1,37 +1,26 @@
 package Modele;
 
-public class Actuality {
+public class ActualityInput {
 
 
 
-    private int id;
-    private Pension pension;
+    private int idPension;
     private String dateActu;
     private String photo;
     private String descriptif;
 
-    public Actuality(Pension pension, String dateActu, String descriptif) {
-
-        this.pension = pension;
+    public ActualityInput(int idPension, String dateActu,String descriptif) {
+        this.idPension = idPension;
         this.dateActu = dateActu;
-
         this.descriptif = descriptif;
     }
 
-    public int getId() {
-        return id;
+    public int getIdPension() {
+        return idPension;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public Pension getPension() {
-        return pension;
-    }
-
-    public void setPension(Pension pension) {
-        this.pension = pension;
+    public void setIdPension(int idPension) {
+        this.idPension = idPension;
     }
 
     public String getDateActu() {
@@ -60,9 +49,8 @@ public class Actuality {
 
     @Override
     public String toString() {
-        return "Actuality{" +
-                "id=" + id +
-                ", pension=" + pension +
+        return "ActualityInput{" +
+                "idPension=" + idPension +
                 ", dateActu='" + dateActu + '\'' +
                 ", photo='" + photo + '\'' +
                 ", descriptif='" + descriptif + '\'' +
